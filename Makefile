@@ -43,3 +43,9 @@ run:
 # This only works on WSL machines
 wsl: build/disk.img
 	@"/mnt/c/Program Files/qemu/qemu-system-i386.exe" $(EMU)
+
+# Commit all changes to the remote git repository
+update:
+	@git add --all
+	@git commit
+	@git push
