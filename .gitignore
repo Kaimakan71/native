@@ -1,4 +1,5 @@
 # Object files
 *.o
+
 # Binaries (other than disk image)
 build/*.bin

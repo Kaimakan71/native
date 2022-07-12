@@ -1,0 +1,5 @@
+# Always use LF file endings
+* text=auto eol=lf
+
+# Binary files should not get diffs or be treated as text
+*.img binary
