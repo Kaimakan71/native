@@ -9,13 +9,7 @@
 
 IRQHANDLER(0);
 
-uint ticks = 0;
-
 void handleIRQ0() {
-	if((ticks % 600) == 0) logf("Hello");
-
-	ticks++;
-
 	exitIRQHandler(IRQ_TIMER);
 }
 
