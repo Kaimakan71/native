@@ -5,9 +5,14 @@ A modern 32-bit operating system written from scratch in C and licensed under th
 Note: in order of priority
 - [x] 32-bit kernel
 - [x] Serial debugging (print to host console)
-- [ ] i8259 Interrupt Controller driver
-- [ ] Kernel IDT & GDT
-- [ ] i8253 Interval Timer driver
+- [x] i8259 Interrupt Controller driver
+- [x] Kernel IDT & GDT
+- [x] i8253 Interval Timer driver
+- [ ] Heap manager (malloc & free)
+- [ ] Keyboard driver & shell
+- [ ] Cooperative multitasking
+- [ ] PCI driver / device detector
+- [ ] IDE/ATA disk driver
 
 ## Authors
 * Creator & main development - [@Kaimakan71](https://github.com/Kaimakan71)

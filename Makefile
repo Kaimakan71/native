@@ -7,8 +7,11 @@
 OBJ=\
 	_start.o \
 	init.o \
-	io.o \
-	log.o
+	arch/i386/io.o \
+	log.o \
+	arch/i386/i8259.o \
+	arch/i386/cpu.o \
+	arch/i386/i8253.o
 
 # Arguments to pass QEMU
 EMU=-drive format=raw,file=build/disk.img,if=floppy -boot a -m size=1M,maxmem=1M -serial stdio -name Native
@@ -20,8 +23,8 @@ build/disk.img: build/boot.bin build/kernel.bin
 	@echo "Creating disk image"; cat build/boot.bin build/kernel.bin > build/disk.img
 
 # Assemble the bootloader
-build/boot.bin: boot.asm
-	@echo "Assembling bootloader"; nasm boot.asm -f bin -o build/boot.bin
+build/boot.bin: arch/i386/boot.asm
+	@echo "Assembling bootloader"; nasm arch/i386/boot.asm -f bin -o build/boot.bin
 
 # Link the kernel binary
 build/kernel.bin: $(OBJ)
